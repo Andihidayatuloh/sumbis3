@@ -22,7 +22,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
-Future<void> main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final NotificationData _notification = NotificationData();
   final BackgroundService _service = BackgroundService();
@@ -38,31 +38,39 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(providers:[
-      ChangeNotifierProvider(create: (_) => DataFavoritProvider(database: SQLFavorit()),),
-      ChangeNotifierProvider(create: (_) => ListRestauranProvider(apiService: ApiService())),
-      ChangeNotifierProvider(create: (_) => SearchRestProvider(apiService: ApiService())),
-      ChangeNotifierProvider(create: (_) => SchedulProvider(preferencesData: PreferencesData(
-        sharedPreferences: SharedPreferences.getInstance(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => DataFavoritProvider(database: SQLFavorit()),
         ),
+        ChangeNotifierProvider(
+            create: (_) => ListRestauranProvider(apiService: ApiService())),
+        ChangeNotifierProvider(
+            create: (_) => SearchRestProvider(apiService: ApiService())),
+        ChangeNotifierProvider(
+          create: (_) => SchedulProvider(
+            preferencesData: PreferencesData(
+              sharedPreferences: SharedPreferences.getInstance(),
+            ),
+          ),
         ),
-        ),
-    ],
-    child: MaterialApp(
-      navigatorKey: navigatorKey,
-      title: 'Restaurant',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-          home: const SplashScreen(),
-      initialRoute: RestHomePage.routeName,
-      routes: {
-        RestHomePage.routeName: (context) => const RestHomePage(),
-        RestListPage.routName: (context) => const RestListPage(),
-        RestDetailPage.routeName:(context) => RestDetailPage(idRest: ModalRoute.of(context)?.settings.arguments
-        as RestaurantList)
-      },
-    ),
+      ],
+      child: MaterialApp(
+        navigatorKey: navigatorKey,
+        title: 'Restaurant',
+        theme: ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity),
+        home: const SplashScreen(),
+        initialRoute: RestHomePage.routeName,
+        routes: {
+          RestHomePage.routeName: (context) => const RestHomePage(),
+          RestListPage.routName: (context) => const RestListPage(),
+          RestDetailPage.routeName: (context) => RestDetailPage(
+              idRest:
+                  ModalRoute.of(context)?.settings.arguments as RestaurantList)
+        },
+      ),
     );
   }
 }

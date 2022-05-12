@@ -15,6 +15,7 @@ class _RestSearchPageState extends State<RestSearchPage> {
   TextEditingController controller = TextEditingController();
   String hasil = "";
   SearchRest? restaurantSearch;
+  RestaurantList? restaurantList;
 
   @override
   Widget build(BuildContext context) {

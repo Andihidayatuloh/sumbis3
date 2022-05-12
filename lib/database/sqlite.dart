@@ -1,10 +1,9 @@
 import 'package:restaurant_api/data/model/list_rest.dart';
-import 'package:restaurant_api/data/provider/list_rest_provider.dart';
-import 'package:sqflite/sqflite.dart' as sql;
+import 'package:sqflite/sqflite.dart';
 
 class SQLFavorit {
   static SQLFavorit? _instance;
-  static sql.Database? _database;
+  static Database? _database;
 
   SQLFavorit._internal() {
     _instance = this;
@@ -14,9 +13,9 @@ class SQLFavorit {
 
   static const String _tblFavorite = 'bookmarks';
 
-  Future<sql.Database> _initializeDb() async {
-    var path = await sql.getDatabasesPath();
-    var db = sql.openDatabase(
+  Future<Database> _initializeDb() async {
+    var path = await getDatabasesPath();
+    var db = openDatabase(
       '$path/newsapp.db',
       onCreate: (db, version) async {
         await db.execute('''CREATE TABLE $_tblFavorite (
@@ -35,7 +34,7 @@ class SQLFavorit {
     return db;
   }
 
-  Future<sql.Database?> get database async {
+  Future<Database?> get database async {
     if (_database == null) {
       _database = await _initializeDb();
     } else {

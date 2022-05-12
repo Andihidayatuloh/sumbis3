@@ -6,8 +6,6 @@ import 'package:restaurant_api/comon/navigation.dart';
 import 'package:restaurant_api/data/model/list_rest.dart';
 import 'package:rxdart/rxdart.dart';
 
-
-
 final selectNotificationSubject = BehaviorSubject<String>();
 
 class NotificationData {

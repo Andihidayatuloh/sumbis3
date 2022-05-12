@@ -28,7 +28,8 @@ class RestDetailPage extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (state.state == RestState.hasData) {
             return RestDetail(restaurant: state.result.restaurant,
-                restaurantList: idRest,);
+                restaurantList: idRest,
+                );
           } else if (state.state == RestState.noData) {
             return Center(child: Text(state.message));
           } else if (state.state == RestState.error) {

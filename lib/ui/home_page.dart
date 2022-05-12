@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_api/data/notifikasi/notifikasidata.dart';
 import 'package:restaurant_api/ui/favorite_rest.dart';
+import 'package:restaurant_api/ui/rest_detail_page.dart';
 import 'package:restaurant_api/ui/rest_list_page.dart';
 import 'package:restaurant_api/ui/rest_search_page.dart';
 import 'package:restaurant_api/ui/setting.dart';
@@ -22,12 +24,23 @@ class _RestHomePageState extends State<RestHomePage> {
     const RestFavoritPage(),
     const RestSettingPage(),
   ];
+  final NotificationData _notificationData = NotificationData();
 
+  @override
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
+  @override
+   @override
+  void initState() {
+    super.initState();
+    _notificationData
+        .configureSelectNotificationSubject(RestDetailPage.routeName);
+  }
+
 
   @override
   Widget build(BuildContext context) {

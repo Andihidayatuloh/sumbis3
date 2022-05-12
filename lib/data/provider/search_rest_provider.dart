@@ -14,8 +14,8 @@ class SearchRestProvider extends ChangeNotifier {
     fetchAllRestaurant(search);
   }
 
-  SearchRest? _restaurantResult;
-  RestState? _state;
+  late SearchRest? _restaurantResult;
+  late RestState? _state;
   String _message = '';
   String _search = '';
 
