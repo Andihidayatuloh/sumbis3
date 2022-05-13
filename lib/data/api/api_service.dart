@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:restaurant_api/data/model/detail_rest.dart';
 import 'package:restaurant_api/data/model/list_rest.dart';
 import 'package:restaurant_api/data/model/search_rest.dart';
