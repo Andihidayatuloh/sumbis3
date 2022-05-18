@@ -22,6 +22,7 @@ class RestListPage extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: state.result.restaurants.length,
                 itemBuilder: (context, index) {
+                  // ignore: non_constant_identifier_names
                   var Rest = state.result.restaurants[index];
                   return CardRest(restaurant: Rest);
                 });

@@ -16,7 +16,8 @@ class RestHomePage extends StatefulWidget {
 
 class _RestHomePageState extends State<RestHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
+  // ignore: unused_field
+  static const TextStyle optioStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final List<Widget> _widgetOption = <Widget>[
     const RestListPage(),
@@ -27,6 +28,7 @@ class _RestHomePageState extends State<RestHomePage> {
   final NotificationData _notificationData = NotificationData();
 
   @override
+  // ignore: override_on_non_overriding_member
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

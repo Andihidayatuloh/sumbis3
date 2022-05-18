@@ -15,7 +15,7 @@ class ApiService {
       throw Exception("Failed To load top Headline");
     }
   }
-
+  
   Future<SearchRest> getTextField(String query) async {
     final response = await http.get(Uri.parse(_url + "search?q=$query"));
     if (response.statusCode == 200) {
