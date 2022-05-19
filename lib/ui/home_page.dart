@@ -36,7 +36,6 @@ class _RestHomePageState extends State<RestHomePage> {
   }
 
   @override
-   @override
   void initState() {
     super.initState();
     _notificationData
