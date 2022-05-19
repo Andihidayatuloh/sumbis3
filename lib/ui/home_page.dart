@@ -21,7 +21,7 @@ class _RestHomePageState extends State<RestHomePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final List<Widget> _widgetOption = <Widget>[
     const RestListPage(),
-    const RestSearchPage(),
+    const RestaurantSearchPage(),
     const RestFavoritPage(),
     const RestSettingPage(),
   ];

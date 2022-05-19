@@ -5,17 +5,18 @@ import 'package:restaurant_api/data/model/search_rest.dart';
 import 'package:restaurant_api/data/provider/search_rest_provider.dart';
 import 'package:restaurant_api/widget/rest_list.dart';
 
-class RestSearchPage extends StatefulWidget {
-  const RestSearchPage({Key? key}) : super(key: key);
+
+class RestaurantSearchPage extends StatefulWidget {
+  const RestaurantSearchPage({Key? key}) : super(key: key);
   @override
-  State<RestSearchPage> createState() => _RestSearchPageState();
+  State<RestaurantSearchPage> createState() => _RestaurantSearchPageState();
 }
 
-class _RestSearchPageState extends State<RestSearchPage> {
+class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
   TextEditingController controller = TextEditingController();
   String hasil = "";
   SearchRest? restaurantSearch;
-  RestaurantList? restaurantList;
+  RestaurantList? restaurantlist;
 
   @override
   Widget build(BuildContext context) {
